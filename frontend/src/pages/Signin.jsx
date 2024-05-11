@@ -40,7 +40,7 @@ export default function SignIn() {
   
     try {
       // Send a POST request to the login endpoint
-      const response = await axios.post('http://localhost:8073/user/login', formData);
+      const response = await axios.post('https://astronomy-2.onrender.com/user/login', formData);
   
       // Log the response for debugging
       console.log('Login response:', response.data);
