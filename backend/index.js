@@ -19,7 +19,7 @@ app.use(errorHandler);
 
 app.use(
   cors({
-    origin: ["http://localhost:11877"],
+    origin: ["http://localhost:13405"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
@@ -48,3 +48,6 @@ mongoose.connection.once("error", (err) => {
     "mongoErrLog.log"
   );
 });
+
+
+
