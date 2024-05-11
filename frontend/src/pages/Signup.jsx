@@ -61,9 +61,17 @@ export default function SignUp() {
       return;
     }
 
+    const axiosConfig = {
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+    
+      }
+    };
+
     try {
-      const response = await axios.post('https://astronomy-2.onrender.com/user/register', formData);
-      
+      const response = await axios.post('https://astronomy-2.onrender.com/user/register', formData,axiosConfig);
+
       console.log(response.data);
       setAlertMessage({ type: 'success', message: 'Successfully signed up!' });
       navigate('/');
