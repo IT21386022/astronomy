@@ -63,6 +63,7 @@ export default function SignUp() {
 
     try {
       const response = await axios.post('https://astronomy-2.onrender.com/user/register', formData);
+      
       console.log(response.data);
       setAlertMessage({ type: 'success', message: 'Successfully signed up!' });
       navigate('/');

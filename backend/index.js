@@ -18,11 +18,7 @@ app.use(logger);
 app.use(errorHandler);
 
 app.use(
-  cors({
-    origin: ["http://localhost:3000"],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-  })
+  cors()
 );
 
 app.use(cookieParser());
