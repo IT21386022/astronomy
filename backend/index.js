@@ -19,7 +19,7 @@ app.use(errorHandler);
 
 app.use(
   cors({
-    origin: ["http://localhost:3000"],
+    origin: ["http://localhost:11877"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
