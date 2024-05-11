@@ -17,6 +17,7 @@ export default function SignUp() {
     email: '',
     password: ''
   });
+
   const [alertMessage, setAlertMessage] = useState(null);
   const navigate = useNavigate(); 
 
@@ -60,17 +61,8 @@ export default function SignUp() {
       }));
       return;
     }
-
-    const axiosConfig = {
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*'
-    
-      }
-    };
-
     try {
-      const response = await axios.post('https://astronomy-2.onrender.com/user/register', formData,axiosConfig);
+      const response = await axios.post('https://astronomy-2.onrender.com/user/register', formData);
 
       console.log(response.data);
       setAlertMessage({ type: 'success', message: 'Successfully signed up!' });
@@ -79,6 +71,7 @@ export default function SignUp() {
       console.error('Error:', error);
     }
   };
+
 
   return (
     <div className="container">
@@ -143,7 +136,7 @@ export default function SignUp() {
                   {errorMessages.password && <div className="text-danger">{errorMessages.password}</div>}
                 </div>
                 <div className="text-center mb-3">
-                  <button type="submit" className="custom-btn">Sign Up</button>
+                  <button type="submit"  className="custom-btn">Sign Up</button>
                 </div>
               </form>
               <div className="text-center">
